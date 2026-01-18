@@ -31,4 +31,4 @@ jobs:
 
     - name: Push Docker Image
       run: |
-        docker push cristianchantada/docker-graphql:1.0.0 .
+        docker push cristianchantada/docker-graphql:1.0.0
