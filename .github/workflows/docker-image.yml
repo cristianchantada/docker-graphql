@@ -25,6 +25,7 @@ jobs:
         minor_pattern: "feat:"
         format: "${major}.${minor}.${patch}-prerelease${increment}"
       id: version
+      
     - name: Docker login
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
@@ -37,8 +38,8 @@ jobs:
       env:
         NEW_VERSION: ${{ steps.version.outputs.version}}
       run: |
-        #docker build -t cristianchantada/docker-graphql:$NEW_VERSION .
-        #docker build -t cristianchantada/docker-graphql:latest .
+        docker build -t cristianchantada/docker-graphql:$NEW_VERSION .
+        docker build -t cristianchantada/docker-graphql:latest .
         
     - name: Push Docker Image
       env:
